@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Briefing marché Romain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout : colonne de lecture unique, verdict en tête, tableaux défilants sur mobile */
+:root{
+  --bg:#F6F7F9; --surface:#FFFFFF; --fg:#18202B; --muted:#5B6676; --line:#DDE2E8;
+  --accent:#1F4E79; --accent-soft:#E6EEF6;
+  --wait:#9A5B00; --wait-soft:#FBF1DF; --train:#B23A2E; --train-fg:#FFFFFF;
+  --f-display:"Fraunces", Georgia, serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161D; --surface:#18202A; --fg:#E6EAF0; --muted:#9AA6B6; --line:#2A3542;
+  --accent:#8DB8E3; --accent-soft:#1D2C3D; --wait:#F0B65A; --wait-soft:#2E2414; --train:#C9534A; --train-fg:#FFFFFF; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161D; --surface:#18202A; --fg:#E6EAF0; --muted:#9AA6B6; --line:#2A3542;
+  --accent:#8DB8E3; --accent-soft:#1D2C3D; --wait:#F0B65A; --wait-soft:#2E2414; --train:#C9534A; --train-fg:#FFFFFF; color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.band{background:var(--train);color:var(--train-fg);font-size:13px;font-weight:500;letter-spacing:.02em}
+.band .in,.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band .in{padding-block:8px}
+.wrap{padding-block:28px 48px;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:4px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+h1{font-family:var(--f-display);font-size:clamp(26px,5vw,36px);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.meta{color:var(--muted);font-size:13px}
+.verdict{background:var(--wait-soft);border:1px solid var(--wait);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.pill{align-self:flex-start;font-family:var(--f-mono);font-size:12px;font-weight:500;color:var(--wait);border:1px solid var(--wait);border-radius:999px;padding:2px 10px;letter-spacing:.04em}
+.verdict p{margin:0;max-width:65ch}
+.verdict strong{font-size:18px}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;max-width:70ch}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font-weight:600;font-size:12px;color:var(--muted);background:var(--accent-soft);letter-spacing:.03em}
+tr:last-child td{border-bottom:0}
+td.num,.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.c{display:inline-block;font-size:11.5px;font-weight:500;border-radius:4px;padding:1px 7px;background:var(--accent-soft);color:var(--accent)}
+.hi td{font-weight:600}
+.note{color:var(--muted);font-size:13px;margin:8px 0 0;max-width:70ch}
+.learn{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.learn p{margin:0;max-width:68ch}
+.learn h3{font-family:var(--f-display);font-size:20px;margin:0}
+.src{font-size:13px;display:flex;flex-direction:column;gap:4px;margin:0;padding-left:18px}
+a{color:var(--accent);text-underline-offset:2px;overflow-wrap:anywhere}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+
+<div class="band"><div class="in">Mode entraînement (à blanc) · positions fictives jusqu'au 30.11.2026</div></div>
+
+<main class="wrap">
+  <header>
+    <span class="eyebrow">Briefing du matin · XTB</span>
+    <h1>Mercredi 4 novembre 2026</h1>
+    <span class="meta">Mis à jour vers 13:00 CET · Cadre : 1 000 CHF, risque 10 CHF par position, actions et ETF uniquement, sans levier</span>
+  </header>
+
+  <section class="verdict" aria-label="Verdict du jour">
+    <span class="pill">VERDICT</span>
+    <strong>Ne rien faire aujourd'hui.</strong>
+    <p>Aucun achat avant le rapport sur l'emploi US (vendredi 06.11, 14:30 CET). Deux événements « pile ou face » dominent : l'emploi US, qui pèse sur la hausse de taux de la Fed en décembre, et la guerre US-Iran, qui fait bouger le pétrole. Attendre est une bonne décision.</p>
+  </section>
+
+  <section>
+    <h2>Ce qui se passe</h2>
+    <ul class="plain">
+      <li>Les démocrates ont remporté les élections de mi-mandat US. Les futures sur les indices US montent d'environ 0,9 % ce matin.</li>
+      <li>Le pétrole reste cher (Brent ≈ 103 $) : Ormuz est fermé et les USA ont frappé l'île iranienne de Qeshm, mais les négociations via le Qatar continuent.</li>
+      <li>L'inflation de la zone euro monte à 4,0 %, son plus haut depuis 3 ans. La BCE se rapproche d'une hausse de taux en décembre.</li>
+      <li>Aux USA, une hausse de la Fed en décembre est jugée probable à environ 70-85 %. Le taux à 10 ans est proche de 4,9 %.</li>
+      <li>En Suisse, le SMI a reculé de 0,4 % mardi (14 743 points). Le franc reste fort (1 USD ≈ 0,818 CHF).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>News → impact</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>News (fait)</th><th>Touchés</th><th>Sens (interprétation)</th><th>Certitude</th><th>Déjà dans les prix ?</th></tr></thead>
+      <tbody>
+        <tr><td>Victoire démocrate aux midterms (03.11)</td><td>Indices US larges</td><td>Hausse ce matin</td><td><span class="c">Faible</span></td><td>En grande partie</td></tr>
+        <tr><td>Inflation zone euro 4,0 %, sous-jacente 2,5 % (04.11)</td><td>Banques européennes (+), immobilier et utilities (−)</td><td>Hausse BCE en décembre plus probable</td><td><span class="c">Moyenne</span></td><td>Partiellement</td></tr>
+        <tr><td>Fed : hausse pricée ~70-85 %, 10 ans ≈ 4,9 %</td><td>Tech et croissance US (−)</td><td>Pression si l'emploi est fort vendredi</td><td><span class="c">Moyenne</span></td><td>En partie (5 % = seuil surveillé)</td></tr>
+        <tr><td>Frappes US sur Qeshm + diplomatie Qatar (02-03.11)</td><td>Pétrolières (Shell, TotalEnergies), compagnies aériennes</td><td>Un accord ferait baisser le pétrole, une escalade le ferait monter</td><td><span class="c">Faible</span></td><td>Non : binaire</td></tr>
+        <tr><td>Résultats AMD au-dessus des attentes (+5 % après la clôture)</td><td>Semi-conducteurs</td><td>Positif à court terme</td><td><span class="c">Moyenne</span></td><td>Oui</td></tr>
+        <tr><td>Franc fort (USD/CHF ≈ 0,818)</td><td>Actions US achetées en CHF</td><td>Risque de change</td><td><span class="c">Moyenne</span></td><td>Oui</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Scénarios</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Titre</th><th>Déclencheur</th><th>Stop</th><th>Objectif</th><th>R/R</th><th>Nb actions / montant</th><th>Annulation</th></tr></thead>
+      <tbody><tr><td><strong>Aucun scénario valide</strong></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Risque binaire (NFP, Iran) et aucun niveau de prix daté et vérifié. Réexamen le lundi 09.11.</td></tr></tbody>
+    </table></div>
+    <p class="note"><strong>Exercice à blanc :</strong> sur le compte démo, note le plus haut et le plus bas de la semaine d'une grande capitalisation (par exemple ABB, +1,6 % mardi). Après les NFP, calcule : nombre d'actions = 10 CHF ÷ (prix d'achat − stop). Si l'objectif n'est pas au moins 2 fois plus loin que le stop, on rejette.</p>
+  </section>
+
+  <section>
+    <h2>Suivi des positions fictives</h2>
+    <p style="margin:0">Aucune position ouverte. Rien à suivre.</p>
+  </section>
+
+  <section class="learn">
+    <h2 style="margin:0">Apprendre en 2 minutes</h2>
+    <h3>« Déjà dans les prix »</h3>
+    <p>La Bourse réagit à la <strong>surprise</strong>, pas à la nouvelle elle-même. Si tout le monde attend une hausse de la Fed à 85 %, son annonce fera peu bouger les cours : elle est déjà dans les prix. C'est l'écart entre l'attendu et le réel qui compte. Ainsi, vendredi, un bon chiffre de l'emploi peut faire <strong>baisser</strong> les actions s'il renforce la hausse des taux.</p>
+    <p><strong>Analogie crypto :</strong> « buy the rumor, sell the news ». En janvier 2024, tout le monde attendait l'approbation des ETF Bitcoin, et le BTC a d'abord baissé juste après l'annonce.</p>
+    <p><strong>À retenir :</strong> avant d'acheter sur une news, demande-toi « est-ce que les autres le savaient déjà ? ».</p>
+  </section>
+
+  <section>
+    <h2>Agenda à risque (CET)</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Date / heure</th><th>Événement</th><th>Pourquoi c'est important</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">Mer. 04.11 14:15</td><td>Emploi privé ADP (US)</td><td>Avant-goût des NFP</td></tr>
+        <tr><td class="mono">Mer. 04.11 16:00</td><td>ISM services (US)</td><td>Croissance et prix dans les services</td></tr>
+        <tr><td class="mono">Mer. 04.11 16:30</td><td>Stocks de pétrole EIA</td><td>Pétrolières</td></tr>
+        <tr><td class="mono">Mer. 04.11 soir</td><td>Résultats Qualcomm, Uber, ARM, McDonald's</td><td>Gros titres US</td></tr>
+        <tr class="hi"><td class="mono">Ven. 06.11 14:30</td><td>Emploi US (NFP)</td><td>Pèse sur la hausse Fed de décembre</td></tr>
+        <tr><td class="mono">07-08.11</td><td>Risque Iran / Ormuz</td><td>Gap possible lundi</td></tr>
+        <tr><td class="mono">Mar. 10.11 14:30</td><td>Inflation US (CPI)</td><td>Deuxième grand test pour la Fed</td></tr>
+        <tr><td class="mono">Mer. 11.11</td><td>Veterans Day (US)</td><td>Bourse US ouverte, marché obligataire fermé</td></tr>
+        <tr><td class="mono">Ven. 13.11 14:30</td><td>Prix à la production US (PPI)</td><td>Inflation en amont</td></tr>
+        <tr><td class="mono">09.12 · 10.12 09:30</td><td>Fed · BNS</td><td>Décisions de taux</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Depuis le 01.11, New York est à 6 h de décalage avec la Suisse.</p>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <ul class="src">
+      <li><a href="https://www.tipranks.com/news/stock-market-today-nov-4-futures-rise-after-democrats-sweep-midterm-elections">TipRanks, Stock Market Today</a> · 04.11.2026</li>
+      <li><a href="https://traderfactor.com/dollar-slips-as-election-results-strong-jolts-take-focus/">TraderFactor, devises et agenda</a> · 04.11.2026</li>
+      <li><a href="https://think.ing.com/snaps/eurozone-inflation-brings-ecb-closer-to-december-rate-hike/">ING Think, inflation zone euro</a> · 04.11.2026</li>
+      <li><a href="https://www.aljazeera.com/news/2026/11/3/us-hits-qeshm-island-pezeshkian-signals-more-diplomacy-iran-war-latest">Al Jazeera, Qeshm et diplomatie</a> · 03.11.2026</li>
+      <li><a href="https://www.ad-hoc-news.de/boerse/news/marktberichte/smi-closes-0-40-percent-lower-at-14-743-09-points-before-us-midterm-vote/70452405">ad-hoc-news, clôture SMI</a> · 03.11.2026</li>
+      <li><a href="https://www.riotimesonline.com/global-economy-briefing-november-2-2026">Rio Times, Fed et marchés</a> · 02.11.2026</li>
+      <li><a href="https://litefinance.org/blog/analysts-opinions/weekly-economic-calendar-for-09112026-15112026">LiteFinance, agenda 09-15.11</a></li>
+      <li><a href="https://www.financecalendar.com/event/snb-rate-decision-december-2026/">FinanceCalendar, BNS décembre</a></li>
+    </ul>
+  </section>
+
+  <footer>Scénarios conditionnels, pas un conseil financier. Fait = chiffres sourcés ; interprétation = colonnes « sens », « certitude » et « déjà dans les prix ».</footer>
+</main>
+</body>
+</html>
